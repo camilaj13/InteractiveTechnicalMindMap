@@ -1,5 +1,7 @@
 # Interactive Technical Mind Map
 
+![Interactive Mind Map](./assets/github-picture.png)
+
 ## Overview
 
 **Interactive Technical Mind Map** is a Vite-powered React application that transforms complex technical projects into interactive, explorable visual maps.
@@ -112,6 +114,31 @@ In your AI workspace, ask: *"Generate a data.ts file for this project following 
 **6. Run the application** with `npm run dev` and open it in your browser at **http://localhost:5173**
 
 You'll now see your project visualized as part of the interactive map selector.
+
+## Future Updates & Appreciated Contributions
+
+We welcome contributions that advance the following technical objectives:
+
+### 🔵 Automated Repository Parsing
+Implement automated GitHub repository analysis and AST parsing to dynamically generate mind map data structures without manual dataset creation. This includes:
+- **Repository introspection** via GitHub API integration
+- **Static analysis** of project structure and dependencies
+- **Automated data.ts generation** from codebase metadata
+
+### 🟢 Zero-Interaction Workflow
+Develop CI/CD pipeline integration and file system watchers to enable automatic dataset synchronization:
+- **Hot-reload** dataset updates on source repository changes
+- **Automated import registration** in MindMap.tsx
+- **Version control hooks** for seamless updates
+
+### 🟣 AI-Native Semantic Layer
+Integrate LLM-powered analysis for intelligent context enrichment:
+- **Semantic code analysis** for enhanced node descriptions
+- **Relationship inference** between architectural components
+- **Natural language queries** for interactive exploration
+- **Context-aware tooltips** with AI-generated insights
+
+Contributions should maintain type safety, follow the existing D3.js architecture, and include comprehensive documentation.
 
 ## License
 
