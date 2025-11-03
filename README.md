@@ -1,0 +1,103 @@
+Interactive Technical Mind Map
+Overview
+
+Interactive Technical Mind Map is a Vite-powered React application that transforms complex technical projects into interactive, explorable visual maps.
+
+Instead of reading long technical documents, engineers and stakeholders can visualize the entire system structure, explore relationships, and understand architecture through expandable branches and rich tooltips.
+
+It’s perfect for visualizing:
+
+Cybersecurity product roadmaps
+
+Software architectures and dependencies
+
+Integration workflows
+
+Technical platform diagrams
+
+This project also serves as a template for developers who want to build their own D3-powered mind maps using React.
+
+Key Features
+
+Multiple datasets in one interface — Quickly switch between CanonGuard, Slither, Tameshi, BullOak, Talir, and Wazuh.
+
+Expandable nodes — Click nodes to expand or collapse while preserving view state.
+
+Rich tooltips — Each node can show contextual descriptions, tags, or external links.
+
+Responsive layout — The map adjusts dynamically with zooming and panning.
+
+Dark theme — Clean, minimal visuals suitable for presentations and documentation.
+
+Installation and Setup
+1. Clone the repository
+
+git clone https://github.com/camilaj13/Interactive-Technical-MindMap.git
+cd Interactive-Technical-MindMap
+
+2. Install dependencies
+
+npm install
+
+3. Run locally
+
+npm run dev
+
+Then open your browser at http://localhost:5173
+
+How to Add Your Own Project
+1. Create your dataset file
+
+Add a new file named for example "Xdata.ts" inside the src/ directory (next to other datasets).
+This file represents your project structure as a hierarchy of folders and files.
+
+Example:
+src/
+  Xdata.ts
+  
+The file must export an object named Xdata that defines your map nodes.
+
+2. Edit MindMap.tsx
+
+Open src/components/MindMap.tsx and add your dataset import:
+
+import { Xdata } from "../Xdata"; // Add your dataset
+
+Then register it inside the DATA_SOURCES map:
+x: Xdata, // Register your dataset key
+
+3. Run the app
+
+npm run dev
+Open http://localhost:5173
+and select your dataset from the dropdown menu.
+
+Your project now appears as an interactive visual map.
+
+Using OpenAI Code or Claude Code
+
+This project is designed to work seamlessly with AI tools like OpenAI Code and Claude Code to automatically generate dataset files.
+
+Workflow:
+
+Fork this repository into your own GitHub account.
+You’ll use it as your visualization base.
+
+Ask your AI code assistant to analyze this project.
+Request: “Analyze the code and create a data.ts file that represents how the mind map data is structured.”
+
+Fork the repository you want to visualize.
+In your AI workspace, ask: “Generate a data.ts file for this project following the same format as in Interactive Technical MindMap.”
+
+Copy the generated data.ts file into your local project and rename it to Xdata.ts.
+
+Edit MindMap.tsx to import your new data file and register it in the dataset map.
+
+Run the application with npm run dev and open it in your browser at http://localhost:5173
+.
+You’ll now see your project visualized as part of the interactive map selector.
+
+License
+This project is licensed under the Mozilla Public License 2.0 (MPL-2.0).
+You may use, modify, and distribute this project freely, as long as any modifications to the source code are shared under the same license.
+Commercial services or private extensions built on top of this project are permitted, provided the core remains under MPL-2.0.
