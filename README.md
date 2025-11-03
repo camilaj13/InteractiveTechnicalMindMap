@@ -97,7 +97,4 @@ Run the application with npm run dev and open it in your browser at http://local
 .
 You’ll now see your project visualized as part of the interactive map selector.
 
-License
-This project is licensed under the Mozilla Public License 2.0 (MPL-2.0).
-You may use, modify, and distribute this project freely, as long as any modifications to the source code are shared under the same license.
-Commercial services or private extensions built on top of this project are permitted, provided the core remains under MPL-2.0.
+License MIT
