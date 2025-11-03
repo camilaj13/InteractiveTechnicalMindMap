@@ -17,15 +17,15 @@ This project also serves as a **template for developers** who want to build thei
 
 ## Key Features
 
-✨ **Multiple datasets in one interface** — Quickly switch between CanonGuard, Slither, Tameshi, BullOak, Talir, and Wazuh.
+🔵 **Multiple datasets in one interface** — Quickly switch between CanonGuard, Slither, Tameshi, BullOak, Talir, and Wazuh.
 
-🔄 **Expandable nodes** — Click nodes to expand or collapse while preserving view state.
+🟢 **Expandable nodes** — Click nodes to expand or collapse while preserving view state.
 
-💡 **Rich tooltips** — Each node can show contextual descriptions, tags, or external links.
+🟣 **Rich tooltips** — Each node can show contextual descriptions, tags, or external links.
 
-📱 **Responsive layout** — The map adjusts dynamically with zooming and panning.
+🟠 **Responsive layout** — The map adjusts dynamically with zooming and panning.
 
-🌙 **Dark theme** — Clean, minimal visuals suitable for presentations and documentation.
+⚫ **Dark theme** — Clean, minimal visuals suitable for presentations and documentation.
 
 ## Installation and Setup
 
