@@ -2,13 +2,13 @@
 export const slitherData = {
   name: "Slither",
   tooltip:
-    "Slither is a static analysis framework for Solidity smart contracts. It performs fast, accurate vulnerability detection, code structure analysis, and generates rich intermediate representations for security tooling and auditing workflows. It is built for speed, precision, and extensibility.",
+    "Slither is a Python-based static analysis framework for Solidity and Vyper smart contracts maintained by Trail of Bits. With 99+ detectors, 6,000+ GitHub stars, and a 99.9% parsing success rate, it performs fast (<1s per contract), accurate vulnerability detection, code structure analysis, and generates rich intermediate representations for security tooling and auditing workflows.",
   children: [
     // ───────────────────────────── Core Concept ─────────────────────────────
     {
       name: "Core Concept",
       tooltip:
-        "Slither statically analyzes Solidity code to detect security vulnerabilities, extract code structure, and support automated or manual reviews. It operates on the contract’s AST and IR, producing findings without executing the code.",
+        "Slither statically analyzes Solidity (v0.4+) and Vyper code to detect security vulnerabilities, extract code structure, and support automated or manual reviews. It operates on the contract's AST and IR, producing findings without executing the code.",
       children: [
         {
           name: "Static analysis engine",
@@ -31,7 +31,7 @@ export const slitherData = {
             {
               name: "Detector modules",
               tooltip:
-                "Slither includes dozens of built-in detectors for common vulnerability classes such as reentrancy, uninitialized storage, and arbitrary ETH sends.",
+                "Slither includes 99+ built-in detectors across severity levels (High, Medium, Low, Informational, Optimization) for vulnerability classes such as reentrancy, uninitialized storage, and arbitrary ETH sends.",
             },
             {
               name: "Extensible plugin system",
@@ -85,7 +85,7 @@ export const slitherData = {
             {
               name: "High-speed execution",
               tooltip:
-                "Slither runs in seconds even on large codebases, enabling iterative security testing.",
+                "Slither parses 99.9% of all public Solidity code and completes analysis in less than 1 second per contract on average, enabling iterative security testing even on large codebases.",
             },
             {
               name: "High signal-to-noise ratio",
@@ -156,14 +156,14 @@ export const slitherData = {
           name: "Environment integration",
           children: [
             {
-              name: "Hardhat and Foundry projects",
+              name: "Framework support",
               tooltip:
-                "Slither runs directly in typical Solidity project directories with standard configurations.",
+                "Slither automatically detects and integrates with Hardhat, Foundry, Dapp, Brownie, and Truffle projects with zero configuration required.",
             },
             {
               name: "CI/CD compatibility",
               tooltip:
-                "Slither integrates with pre-commit hooks and GitHub Actions for automated checks.",
+                "Slither integrates with pre-commit hooks, GitHub Actions, and code scanning, supporting automated security checks in development pipelines.",
             },
           ],
         },
@@ -419,6 +419,188 @@ export const slitherData = {
               name: "Plugin ecosystem",
               tooltip:
                 "Custom rulesets can evolve with organizational security standards.",
+            },
+          ],
+        },
+      ],
+    },
+
+    // ───────────────────────────── Comparative Analysis ──────────────────────────
+    {
+      name: "Comparative Analysis",
+      tooltip:
+        "Slither occupies a distinct role in the smart contract ecosystem, complementing development frameworks rather than competing with them.",
+      children: [
+        {
+          name: "Slither vs Development Frameworks",
+          tooltip:
+            "Slither is a security analysis tool, while frameworks like Hardhat, Foundry, and Truffle are development environments—they serve complementary purposes.",
+          children: [
+            {
+              name: "Hardhat comparison",
+              tooltip:
+                "Hardhat is a development framework providing compilation, testing (Mocha/Chai), debugging, and deployment tooling. Slither analyzes the contracts built with Hardhat to find vulnerabilities. They work together, not as alternatives.",
+            },
+            {
+              name: "Foundry comparison",
+              tooltip:
+                "Foundry excels at dynamic testing, fuzzing, and real-world simulations. Slither provides fast static analysis for unreachable code and access control issues. Using both gives comprehensive coverage.",
+            },
+            {
+              name: "Zero-configuration integration",
+              tooltip:
+                "Slither automatically detects Hardhat, Foundry, Truffle, Brownie, and Dapp projects without requiring configuration changes, making it easy to add security scanning to existing workflows.",
+            },
+          ],
+        },
+        {
+          name: "Slither vs Other Security Tools",
+          tooltip:
+            "Compared to other security analyzers, Slither offers unique trade-offs in speed, precision, and extensibility.",
+          children: [
+            {
+              name: "Static vs Dynamic analysis",
+              tooltip:
+                "Slither (static) finds issues without execution, complementing dynamic tools like Echidna (fuzzing) and Manticore (symbolic execution) which explore runtime behaviors.",
+            },
+            {
+              name: "Speed advantage",
+              tooltip:
+                "With <1 second per contract execution time, Slither is significantly faster than symbolic execution tools, making it ideal for CI/CD integration and iterative development.",
+            },
+            {
+              name: "Breadth of detection",
+              tooltip:
+                "99+ detectors across multiple severity levels provide broad coverage of known vulnerability patterns, from critical exploits to code quality optimizations.",
+            },
+            {
+              name: "Open source extensibility",
+              tooltip:
+                "Unlike commercial tools like MythX, Slither's Python API and AGPL-3.0 license enable custom detector development and full pipeline customization without licensing constraints.",
+            },
+          ],
+        },
+        {
+          name: "Best Practice: Multi-Tool Approach",
+          tooltip:
+            "Professional security audits combine multiple tools to achieve comprehensive coverage across different analysis dimensions.",
+          children: [
+            {
+              name: "Development + Static + Dynamic",
+              tooltip:
+                "Recommended workflow: develop with Hardhat/Foundry, run Slither for fast static analysis, add Echidna for fuzzing, and use Manticore for deep symbolic analysis on critical functions.",
+            },
+            {
+              name: "CI/CD integration strategy",
+              tooltip:
+                "Slither runs on every commit for fast feedback, while heavier tools like symbolic execution run nightly or pre-deployment to balance speed with thoroughness.",
+            },
+          ],
+        },
+      ],
+    },
+
+    // ───────────────────────────── Slither + Tameshi ──────────────────────────
+    {
+      name: "Slither + Tameshi Complement",
+      tooltip:
+        "Slither and Tameshi work together to provide layered security analysis with different strengths, speeds, and analysis approaches.",
+      children: [
+        {
+          name: "Why use both?",
+          tooltip:
+            "Slither and Tameshi complement each other by offering different trade-offs in speed, analysis depth, AI augmentation, and development workflow integration.",
+          children: [
+            {
+              name: "Established vs Emerging",
+              tooltip:
+                "Slither (6,000+ stars, mature ecosystem) provides battle-tested detection from Trail of Bits with 99+ detectors. Tameshi brings modern multi-modal analysis combining deterministic scanners with LLM reasoning for edge cases.",
+            },
+            {
+              name: "Python vs Rust ecosystems",
+              tooltip:
+                "Slither leverages Python for easy scripting and integration. Tameshi is built in Rust for performance and memory safety, with custom ThalIR representation optimized for smart contract analysis.",
+            },
+            {
+              name: "Different intermediate representations",
+              tooltip:
+                "Slither uses SlithIR for SSA-based analysis. Tameshi uses ThalIR with explicit smart contract primitives (storage slots, call contexts, revert semantics), enabling different vulnerability detection strategies.",
+            },
+          ],
+        },
+        {
+          name: "Complementary strengths",
+          tooltip:
+            "Each tool excels in different dimensions, making them valuable in different stages of development and audit workflows.",
+          children: [
+            {
+              name: "Slither: Breadth & speed",
+              tooltip:
+                "Slither's 99+ detectors and <1s execution time make it ideal for comprehensive scanning during CI/CD, catching a wide range of known vulnerability patterns instantly.",
+            },
+            {
+              name: "Tameshi: Depth & AI assistance",
+              tooltip:
+                "Tameshi's hybrid deterministic+LLM analysis finds semantic vulnerabilities that rigid rules miss, with cross-validation boosting confidence and explainable provenance for audit trails.",
+            },
+            {
+              name: "Slither: CLI-first workflow",
+              tooltip:
+                "Slither integrates naturally into command-line workflows, CI pipelines, and GitHub Actions with minimal setup, outputting JSON/Markdown/SARIF for automation.",
+            },
+            {
+              name: "Tameshi: Editor-native experience",
+              tooltip:
+                "Tameshi's VSCode extension provides real-time inline diagnostics and vulnerability triage panels, working on incomplete code without requiring full compilation.",
+            },
+          ],
+        },
+        {
+          name: "Recommended workflow",
+          tooltip:
+            "Use both tools at different stages to maximize security coverage while maintaining development velocity.",
+          children: [
+            {
+              name: "Development phase",
+              tooltip:
+                "Run Tameshi in VSCode for real-time feedback on code as you write, catching issues before they reach version control.",
+            },
+            {
+              name: "Pre-commit/CI phase",
+              tooltip:
+                "Run Slither in CI pipelines for fast, comprehensive scanning across all 99+ detectors, blocking merges that introduce known vulnerabilities.",
+            },
+            {
+              name: "Pre-audit phase",
+              tooltip:
+                "Run both tools with full LLM analysis enabled: Slither catches broad patterns, Tameshi's AI reasoning surfaces subtle logic flaws and complex interactions.",
+            },
+            {
+              name: "Cross-validation",
+              tooltip:
+                "When both tools flag the same issue, confidence increases significantly. When they disagree, investigate carefully—different IRs may reveal different aspects of the same problem.",
+            },
+          ],
+        },
+        {
+          name: "Tool selection guidance",
+          tooltip:
+            "Choose based on your current needs, but using both provides the most comprehensive security coverage.",
+          children: [
+            {
+              name: "Choose Slither when...",
+              tooltip:
+                "You need fast CI integration, broad detector coverage, Python ecosystem compatibility, or integration with existing Trail of Bits tooling (Echidna, Manticore).",
+            },
+            {
+              name: "Choose Tameshi when...",
+              tooltip:
+                "You want VSCode integration, LLM-augmented analysis for edge cases, explainable provenance chains, or analysis of incomplete/in-progress code without compilation.",
+            },
+            {
+              name: "Use both when...",
+              tooltip:
+                "You're conducting professional security audits, preparing for mainnet deployment, or building security-critical DeFi protocols where comprehensive coverage is essential.",
             },
           ],
         },
