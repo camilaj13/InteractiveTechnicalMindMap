@@ -1,5 +1,7 @@
 # Interactive Technical Mind Map
 
+![Interactive Mind Map](./assets/github-picture.png)
+
 ## Overview
 
 **Interactive Technical Mind Map** is a Vite-powered React application that transforms complex technical projects into interactive, explorable visual maps.
