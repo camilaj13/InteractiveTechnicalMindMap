@@ -17,7 +17,7 @@ This project also serves as a **template for developers** who want to build thei
 
 ## Key Features
 
-🔵 **Multiple datasets in one interface** — Quickly switch between CanonGuard, Slither, Tameshi, BullOak, Talir, and Wazuh.
+🔵 **Multiple datasets in one interface** — Quickly switch between, Slither, Tameshi, BullOak, ThalIR, CanonGuard and Wazuh.
 
 🟢 **Expandable nodes** — Click nodes to expand or collapse while preserving view state.
 
