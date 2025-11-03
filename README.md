@@ -1,6 +1,6 @@
 # Interactive Technical Mind Map
 
-![Interactive Mind Map](./assets/github-picture.png)
+![Interactive Mind Map](./assets/github-pitcure.png)
 
 ## Overview
 
